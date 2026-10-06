@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Application</title>
+
+    <!-- Connecting CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Quiz Application</h1>
+        <p>Test Your Knowledge</p>
+    </header>
+
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- Category Section -->
+        <section id="category-section">
+
+            <h2>Select a Category</h2>
+            <p>Choose a category to start the quiz.</p>
+
+            <div class="category-container">
+
+                <div class="category-box" onclick="selectCategory('Sports')">
+                    <h3>⚽ Sports</h3>
+                    <p>Cricket, Football and Olympics</p>
+                </div>
+
+                <div class="category-box" onclick="selectCategory('Entertainment')">
+                    <h3>🎬 Entertainment</h3>
+                    <p>Movies, Music and TV Shows</p>
+                </div>
+
+                <div class="category-box" onclick="selectCategory('Science')">
+                    <h3>🔬 Science & Technology</h3>
+                    <p>Physics, Space and Computers</p>
+                </div>
+
+                <div class="category-box" onclick="selectCategory('History')">
+                    <h3>🌍 Geography & History</h3>
+                    <p>World and Indian History</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Subcategory Section -->
+        <section id="subcategory-section" style="display: none;">
+
+            <button onclick="goBackToCategory()">← Back</button>
+
+            <h2>Select a Round</h2>
+
+            <div id="subcategory-container">
+
+                <!-- JavaScript will add rounds here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- Difficulty Section -->
+        <section id="difficulty-section" style="display: none;">
+
+            <button onclick="goBackToSubcategory()">← Back</button>
+
+            <h2>Select Difficulty</h2>
+
+            <div class="difficulty-container">
+
+                <button onclick="selectDifficulty('easy')">
+                    Easy
+                </button>
+
+                <button onclick="selectDifficulty('moderate')">
+                    Moderate
+                </button>
+
+                <button onclick="selectDifficulty('hard')">
+                    Hard
+                </button>
+
+            </div>
+
+            <button onclick="startQuiz()" class="start-button">
+                Start Quiz
+            </button>
+
+        </section>
+
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" style="display: none;">
+
+            <div class="quiz-top">
+                <p id="question-number">Question 1 of 5</p>
+
+                <p>
+                    Score:
+                    <span id="score">0</span>
+                </p>
+            </div>
+
+            <!-- Question -->
+            <div class="quiz-box">
+
+                <h2 id="question">
+                    Question will appear here
+                </h2>
+
+                <!-- Options -->
+                <div id="options">
+
+                    <button class="option" onclick="checkAnswer(0)">
+                        Option A
+                    </button>
+
+                    <button class="option" onclick="checkAnswer(1)">
+                        Option B
+                    </button>
+
+                    <button class="option" onclick="checkAnswer(2)">
+                        Option C
+                    </button>
+
+                    <button class="option" onclick="checkAnswer(3)">
+                        Option D
+                    </button>
+
+                </div>
+
+                <button id="next-button" onclick="nextQuestion()">
+                    Next Question
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Result Section -->
+        <section id="result-section" style="display: none;">
+
+            <div class="result-box">
+
+                <h2>Quiz Completed!</h2>
+
+                <h3>Your Score</h3>
+
+                <p id="final-score">
+                    0 / 5
+                </p>
+
+                <p>
+                    Correct Answers:
+                    <span id="correct-answers">0</span>
+                </p>
+
+                <p>
+                    Wrong Answers:
+                    <span id="wrong-answers">0</span>
+                </p>
+
+                <button onclick="restartQuiz()">
+                    Try Again
+                </button>
+
+                <button onclick="goBackToCategory()">
+                    Choose Another Category
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Quiz Application | Made by Student</p>
+    </footer>
+
+
+    <!-- Connecting JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
